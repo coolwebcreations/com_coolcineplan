@@ -7,7 +7,7 @@
     <author>Mike Brandner</author>
     <authorEmail>mike@coolwebcreations.de</authorEmail>
     <authorUrl>http://www.coolwebcreations.de</authorUrl>
-    <version>CVS: 0.1.16</version>
+    <version>CVS: 0.1.17</version>
     <description>Cool Cine Plan - A cinema movie and showings management tool for Joomla!</description>
     
     <scriptfile>script.php</scriptfile>
