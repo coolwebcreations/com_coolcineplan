@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+    <name>com_coolcineplan</name>
+    <creationDate>2016-05-11</creationDate>
+    <copyright>Copyright (C) coolwebcreations.de 2016. All rights reserved</copyright>
+    <license>GNU General Public License Version 2 oder später; siehe LICENSE.txt</license>
+    <author>Mike Brandner</author>
+    <authorEmail>mike@coolwebcreations.de</authorEmail>
+    <authorUrl>http://www.coolwebcreations.de</authorUrl>
+    <version>CVS: 0.1.16</version>
+    <description>Cool Cine Plan - A cinema movie and showings management tool for Joomla!</description>
+    
+    <scriptfile>script.php</scriptfile>
+    
+    <install> <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <update> <!-- Runs on update -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/update.mysql.utf8.sql</file>
+        </sql>
+    </update>
+    <uninstall> <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+    <files folder="site">
+        <filename>index.html</filename>
+        <filename>coolcineplan.php</filename>
+        <filename>controller.php</filename>
+        <filename>router.php</filename>
+        <folder>views</folder>
+        <folder>models</folder>
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+    </files>
+    <media destination="com_coolcineplan" folder="media">
+        <folder>js</folder>
+        <folder>css</folder>
+    </media>
+    <languages folder="languages/site">
+        
+			<language tag="en-GB">en-GB/en-GB.com_coolcineplan.ini</language>
+			<language tag="de-DE">de-DE/de-DE.com_coolcineplan.ini</language>
+    </languages>
+    <administration>
+        <menu img="media/com_coolcineplan/images/s_com_coolcineplan.png" >COM_COOLCINEPLAN</menu>
+        <submenu>
+            
+			<menu link="option=com_coolcineplan&amp;view=movies" view="movies" img="media/com_coolcineplan/images/s_movies.png" alt="Coolcineplan/Movies">COM_COOLCINEPLAN_TITLE_MOVIES</menu>
+
+			<menu link="option=com_coolcineplan&amp;view=showings" view="showings" img="media/com_coolcineplan/images/s_showings.png" alt="Coolcineplan/Showings">COM_COOLCINEPLAN_TITLE_SHOWINGS</menu>
+
+			<menu link="option=com_coolcineplan&amp;view=showtypes" view="showtypes" img="media/com_coolcineplan/images/s_showtypes.png" alt="Coolcineplan/Showtypes">COM_COOLCINEPLAN_TITLE_SHOWTYPES</menu>
+
+			<menu link="option=com_coolcineplan&amp;view=auditoriums" view="auditoriums" img="media/com_coolcineplan/images/s_auditoriums.png" alt="Coolcineplan/Auditoriums">COM_COOLCINEPLAN_TITLE_AUDITORIUMS</menu>
+
+			<menu link="option=com_coolcineplan&amp;view=reservations" view="reservations" img="media/com_coolcineplan/images/s_reservations.png" alt="Coolcineplan/Reservations">COM_COOLCINEPLAN_TITLE_RESERVATIONS</menu>
+
+			<menu link="option=com_coolcineplan&amp;view=users" view="users" img="media/com_coolcineplan/images/s_users.png" alt="Coolcineplan/Users">COM_COOLCINEPLAN_TITLE_USERS</menu>
+
+        </submenu>
+        <files folder="administrator">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>index.html</filename>
+            <filename>coolcineplan.php</filename>
+            <folder>controllers</folder>
+            <folder>assets</folder>
+            <folder>helpers</folder>
+            <folder>models</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+        </files>
+        <languages folder="languages/administrator">
+            
+			<language tag="en-GB">en-GB/en-GB.com_coolcineplan.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_coolcineplan.sys.ini</language>
+			<language tag="de-DE">de-DE/de-DE.com_coolcineplan.ini</language>
+			<language tag="de-DE">de-DE/de-DE.com_coolcineplan.sys.ini</language>
+        </languages>
+    </administration>
+    <config>
+        <fields name="params">
+            <fieldset name="component">
+                <field name="save_history" default="0" />
+            </fieldset>
+        </fields>
+    </config>
+    <plugins>
+        <plugin group="search" plugin="coolcineplan"/>
+    </plugins>
+    <modules>
+		<module module="mod_coolcineplan" />
+	</modules>
+</extension>
+<!-- Component built by the Joomla Component Creator -->
+<!-- http://www.component-creator.com/ -->
