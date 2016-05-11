@@ -25,11 +25,11 @@ $canChange  = $user->authorise('core.edit.state', 'com_coolcineplan');
 $canDelete  = $user->authorise('core.delete', 'com_coolcineplan');
 ?>
 
-<form action="<?php echo JRoute::_('index.php?option=com_coolcineplan&view=showings'); ?>" method="post"
+<form action="<?php echo JRoute::_('index.php?option=com_coolcineplan&view=todayshowings'); ?>" method="post"
       name="adminForm" id="adminForm">
 
 	<?php echo JLayoutHelper::render('default_filter', array('view' => $this), dirname(__FILE__)); ?>
-	<table class="table table-striped" id="showingList">
+	<table class="table table-striped" id="todayshowingList">
 		<thead>
 		<tr>
 			<?php if (isset($this->items[0]->state)): ?>
