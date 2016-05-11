@@ -1,5 +1,5 @@
 # com_cineplan
-<h1>A cinema movie and showings management tool for Joomla!</h1>
+<h1>A cinema movie and showings management tool</br>for Joomla!</h1>
 <h2>Special component for cinemas</h2>
 
 <h4>Views and Listings</h4>
