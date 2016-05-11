@@ -1,0 +1,71 @@
+.icon-48-movies {
+      background-image: url(../images/l_movies.png);
+      padding-left:60px!important;
+}
+
+.icon-48-movie {
+      background-image: url(../images/l_movies.png);
+      padding-left:60px!important;
+}
+
+.color-box-movies { 
+      float: left;      width: 15px;      height: 15px;      margin-right: 5px;      border: 1px solid rgba(0, 0, 0, .2);.icon-48-showings {
+      background-image: url(../images/l_showings.png);
+      padding-left:60px!important;
+}
+
+.icon-48-showing {
+      background-image: url(../images/l_showings.png);
+      padding-left:60px!important;
+}
+
+.color-box-showings { 
+      float: left;      width: 15px;      height: 15px;      margin-right: 5px;      border: 1px solid rgba(0, 0, 0, .2);.icon-48-showtypes {
+      background-image: url(../images/l_showtypes.png);
+      padding-left:60px!important;
+}
+
+.icon-48-showtype {
+      background-image: url(../images/l_showtypes.png);
+      padding-left:60px!important;
+}
+
+.color-box-showtypes { 
+      float: left;      width: 15px;      height: 15px;      margin-right: 5px;      border: 1px solid rgba(0, 0, 0, .2);.icon-48-auditoriums {
+      background-image: url(../images/l_auditoriums.png);
+      padding-left:60px!important;
+}
+
+.icon-48-auditorium {
+      background-image: url(../images/l_auditoriums.png);
+      padding-left:60px!important;
+}
+
+.color-box-auditoriums { 
+      float: left;      width: 15px;      height: 15px;      margin-right: 5px;      border: 1px solid rgba(0, 0, 0, .2);.icon-48-reservations {
+      background-image: url(../images/l_reservations.png);
+      padding-left:60px!important;
+}
+
+.icon-48-reservation {
+      background-image: url(../images/l_reservations.png);
+      padding-left:60px!important;
+}
+
+.color-box-reservations { 
+      float: left;      width: 15px;      height: 15px;      margin-right: 5px;      border: 1px solid rgba(0, 0, 0, .2);.icon-48-users {
+      background-image: url(../images/l_users.png);
+      padding-left:60px!important;
+}
+
+.icon-48-user {
+      background-image: url(../images/l_users.png);
+      padding-left:60px!important;
+}
+
+.color-box-users { 
+      float: left;      width: 15px;      height: 15px;      margin-right: 5px;      border: 1px solid rgba(0, 0, 0, .2);
+
+.other-filters{
+    padding: 0 14px;
+}
