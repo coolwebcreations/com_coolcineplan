@@ -17,7 +17,7 @@ jimport('joomla.application.component.view');
  *
  * @since  1.6
  */
-class CoolcineplanViewShowings extends JViewLegacy
+class CoolcineplanViewTodayshowings extends JViewLegacy
 {
 	protected $items;
 
