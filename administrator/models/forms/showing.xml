@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+
+        <field name="id"
+			type="text"
+			default="0"
+			label="COM_COOLCINEPLAN_FORM_LBL_SHOWING_ID"
+			readonly="true"
+			class="readonly"
+			description="JGLOBAL_FIELD_ID_DESC"
+		/> 
+
+ 
+		<field name="created_by"
+			type="createdby"
+			default=""
+			label="COM_COOLCINEPLAN_FORM_LBL_SHOWING_CREATED_BY"
+			description="COM_COOLCINEPLAN_FORM_DESC_SHOWING_CREATED_BY" 
+			hint="COM_COOLCINEPLAN_FORM_LBL_SHOWING_CREATED_BY"
+		/> 
+
+ 
+		<field name="modified_by"
+			type="modifiedby"
+			default=""
+			label="COM_COOLCINEPLAN_FORM_LBL_SHOWING_MODIFIED_BY"
+			description="COM_COOLCINEPLAN_FORM_DESC_SHOWING_MODIFIED_BY" 
+			hint="COM_COOLCINEPLAN_FORM_LBL_SHOWING_MODIFIED_BY"
+		/> 
+
+ 
+		<field name="showingtime"
+			type="calendar"
+			label="COM_COOLCINEPLAN_FORM_LBL_SHOWING_SHOWINGTIME"
+			description="COM_COOLCINEPLAN_FORM_DESC_SHOWING_SHOWINGTIME" 
+			hint="COM_COOLCINEPLAN_FORM_LBL_SHOWING_SHOWINGTIME"
+			required="true" 
+			menu_published="0"
+			filter="raw"
+			directory_stripext="true"
+			directory_hidenode="true"
+			directory_hidedefault="true"
+			heading="h4"
+			close="true"
+			option_on="Yes"
+			option_off="Yes"
+			toggle_default_value="0"
+		/> 
+
+ 
+		<field name="movie"
+			type="sql"
+			label="Movie"
+			description=""
+			query="SELECT id, movietitle FROM #__cineplan_movies"
+			key_field="id"
+			value_field="movietitle"
+			required="true"
+		/> 
+
+ 
+		<field name="auditorium"
+			type="sql"
+			label="Auditorium"
+			description=""
+			query="SELECT id, auditorium_name FROM #__cineplan_auditoriums"
+			key_field="id"
+			value_field="auditorium_name"
+		/> 
+
+ 
+		<field name="showtype"
+			type="sql"
+			label="Showtype"
+			description=""
+			query="SELECT id, showtype FROM #__cineplan_showtypes"
+			key_field="id"
+			value_field="showtype"
+		/> 
+
+ 
+		<field name="version_note"
+			type="text"
+			label="JGLOBAL_FIELD_VERSION_NOTE_LABEL"
+			description="JGLOBAL_FIELD_VERSION_NOTE_DESC"
+			class="inputbox"
+			size="45"
+			labelclass="control-label"
+		/> 
+
+ 
+		<field name="state"
+			type="list"
+			label="JSTATUS"
+			description="JFIELD_PUBLISHED_DESC"
+			class="inputbox"
+			size="1"
+			default="1"
+		>
+			<option value="1">JPUBLISHED</option>
+			<option value="0">JUNPUBLISHED</option>
+			<option value="2">JARCHIVED</option>
+			<option value="-2">JTRASHED</option>
+		</field> 
+
+ 
+		<field name="checked_out"
+			type="hidden"
+			filter="unset"
+		/>
+
+		<field name="checked_out_time"
+			type="hidden"
+			filter="unset"
+		/> 
+
+ 
+	</fieldset> 
+
+ 
+	<fieldset name="accesscontrol">
+
+		<field name="asset_id"
+			type="hidden"
+			filter="unset"
+		/>
+
+		<field name="rules"
+			type="rules"
+			label="JFIELD_RULES_LABEL"
+			translate_label="false"
+			filter="rules"
+			validate="rules"
+			class="inputbox"
+			component="com_coolcineplan"
+			section="showing"
+		/>
+
+	</fieldset>
+
+</form>
