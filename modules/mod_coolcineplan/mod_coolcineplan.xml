@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" method="upgrade" client="site">
+    <name>MOD_COOLCINEPLAN_NAME</name>
+    <creationDate>2016-05-11</creationDate>
+    <copyright>Copyright (C) coolwebcreations.de 2016. All rights reserved</copyright>
+    <license>GNU General Public License Version 2 oder später; siehe LICENSE.txt</license>
+    <author>Mike Brandner</author>
+    <authorEmail>mike@coolwebcreations.de</authorEmail>
+    <authorUrl>http://www.coolwebcreations.de</authorUrl>
+    <version>CVS: 0.1.16</version>
+    <description>MOD_COOLCINEPLAN_DESCRIPTION</description>
+    
+    <files>
+        <filename module="mod_coolcineplan">mod_coolcineplan.php</filename>
+        <filename>helper.php</filename>
+        <filename>index.html</filename>
+        <folder>tmpl</folder>
+    </files>
+    <languages folder="../../languages/modules/mod_coolcineplan">
+        
+			<language tag="en-GB">en-GB/en-GB.mod_coolcineplan.ini</language>
+			<language tag="en-GB">en-GB/en-GB.mod_coolcineplan.sys.ini</language>
+			<language tag="de-DE">de-DE/de-DE.mod_coolcineplan.ini</language>
+			<language tag="de-DE">de-DE/de-DE.mod_coolcineplan.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset 
+                name="content_type" 
+                label="MOD_COOLCINEPLAN_CONTENT_TYPE_TAB_LBL"
+                description="MOD_COOLCINEPLAN_CONTENT_TYPE_TAB_DESC">
+                <field
+                    name="content_type" type="list"
+                    label="MOD_COOLCINEPLAN_CONTENT_TYPE_LBL"
+                    description="MOD_COOLCINEPLAN_CONTENT_TYPE_DESC">
+                    <option value="blank">MOD_COOLCINEPLAN_CUSTOM_CONTENT</option>
+                    <option value="list">MOD_COOLCINEPLAN_LIST</option>
+                    <option value="item">MOD_COOLCINEPLAN_ITEM</option>
+                </field>
+            </fieldset>
+            <fieldset 
+                name="blank_content" 
+                label="MOD_COOLCINEPLAN_CUSTOM_CONTENT_TAB_LBL"
+                description="MOD_COOLCINEPLAN_CUSTOM_CONTENT_TAB_DESC">
+                <field 
+                    name="html_content" type="editor" filter="safehtml"
+                    label="MOD_COOLCINEPLAN_HTML_LBL"
+                    description="MOD_COOLCINEPLAN_HTML_DESC" />
+            </fieldset>
+            <fieldset 
+                name="list_content" 
+                label="MOD_COOLCINEPLAN_LIST_CONTENT_TAB_LBL"
+                description="MOD_COOLCINEPLAN_LIST_CONTENT_TAB_DESC">
+                <field
+                    name="table" type="list"
+                    label="MOD_COOLCINEPLAN_TABLE_LBL"
+                    description="MOD_COOLCINEPLAN_TABLE_DESC">
+                    
+	<option value="#__cineplan_movies">#__cineplan_movies</option>
+	<option value="#__cineplan_showings">#__cineplan_showings</option>
+	<option value="#__cineplan_showtypes">#__cineplan_showtypes</option>
+	<option value="#__cineplan_auditoriums">#__cineplan_auditoriums</option>
+	<option value="#__cineplan_reservations">#__cineplan_reservations</option>
+	<option value="#__cineplan_users">#__cineplan_users</option>
+                </field>
+                <field 
+                    name="field" type="groupedlist" default=""
+                    label="MOD_COOLCINEPLAN_FIELD_LBL"
+                    description="MOD_COOLCINEPLAN_FIELD_DESC">
+                    
+	<group label="#__cineplan_movies">
+		<option value="id">id</option>
+		<option value="created_by">created_by</option>
+		<option value="movietitle">movietitle</option>
+		<option value="moviecontent">moviecontent</option>
+		<option value="moviecomment">moviecomment</option>
+		<option value="director">director</option>
+		<option value="actors">actors</option>
+		<option value="country">country</option>
+		<option value="year">year</option>
+		<option value="rentalcompany">rentalcompany</option>
+		<option value="poster">poster</option>
+		<option value="length">length</option>
+		<option value="genre">genre</option>
+		<option value="age">age</option>
+		<option value="trailer_id">trailer_id</option>
+	</group>
+	<group label="#__cineplan_showings">
+		<option value="id">id</option>
+		<option value="created_by">created_by</option>
+		<option value="modified_by">modified_by</option>
+		<option value="showingtime">showingtime</option>
+		<option value="movie">movie</option>
+		<option value="auditorium">auditorium</option>
+		<option value="showtype">showtype</option>
+	</group>
+	<group label="#__cineplan_showtypes">
+		<option value="id">id</option>
+		<option value="created_by">created_by</option>
+		<option value="modified_by">modified_by</option>
+		<option value="showtype">showtype</option>
+		<option value="description">description</option>
+		<option value="image">image</option>
+	</group>
+	<group label="#__cineplan_auditoriums">
+		<option value="id">id</option>
+		<option value="created_by">created_by</option>
+		<option value="modified_by">modified_by</option>
+		<option value="auditorium_name">auditorium_name</option>
+		<option value="seats">seats</option>
+		<option value="auditorium_image">auditorium_image</option>
+	</group>
+	<group label="#__cineplan_reservations">
+		<option value="id">id</option>
+		<option value="created_by">created_by</option>
+		<option value="modified_by">modified_by</option>
+		<option value="show_id">show_id</option>
+	</group>
+	<group label="#__cineplan_users">
+		<option value="id">id</option>
+		<option value="created_by">created_by</option>
+		<option value="modified_by">modified_by</option>
+	</group>
+                </field>
+                <field 
+                    name="offset" type="text" default="0" filter="uint" class="input-small"
+                    label="MOD_COOLCINEPLAN_OFFSET_LBL"
+                    description="MOD_COOLCINEPLAN_OFFSET_DESC" />
+                <field 
+                    name="limit" type="text" default="10" filter="uint" class="input-small"
+                    label="MOD_COOLCINEPLAN_LIMIT_LBL"
+                    description="MOD_COOLCINEPLAN_LIMIT_DESC" />
+            </fieldset>
+            <fieldset 
+                name="item_content" 
+                label="MOD_COOLCINEPLAN_ITEM_CONTENT_TAB"
+                description="MOD_COOLCINEPLAN_ITEM_CONTENT_TAB_DESC">
+                <field
+                    name="item_table" type="list"
+                    label="MOD_COOLCINEPLAN_TABLE_LBL"
+                    description="MOD_COOLCINEPLAN_TABLE_DESC">
+                    
+	<option value="#__cineplan_movies">#__cineplan_movies</option>
+	<option value="#__cineplan_showings">#__cineplan_showings</option>
+	<option value="#__cineplan_showtypes">#__cineplan_showtypes</option>
+	<option value="#__cineplan_auditoriums">#__cineplan_auditoriums</option>
+	<option value="#__cineplan_reservations">#__cineplan_reservations</option>
+	<option value="#__cineplan_users">#__cineplan_users</option>
+                </field>
+                <field 
+                    name="item_id" type="text" filter="uint" class="input-small"
+                    label="MOD_COOLCINEPLAN_ITEM_ID_LBL"
+                    description="MOD_COOLCINEPLAN_ITEM_ID_DESC"
+                />
+            </fieldset>
+        </fields>
+    </config>
+</extension>
