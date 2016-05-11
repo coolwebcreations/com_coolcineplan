@@ -1,7 +1,7 @@
 # com_cineplan
 <h1>A cinema movie and showings management tool</br>for Joomla!</h1>
 <h2>Here I´m creating a special component for cinemas</h2>
-<h4><i>This is my first component - help is welcome!</i> :smile:</h4>
+<h4>:bulb::bulb::bulb:<i>This is my first component - help is welcome!</i> :smile:</h4>
 
 <h4>Views and Listings</h4>
 <ul>
