@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="search">
+    <name>plg_search_coolcineplan</name>
+    <author>Mike Brandner</author>
+    <creationDate>2016-05-11</creationDate>
+    <copyright>Copyright (C) coolwebcreations.de 2016. All rights reserved</copyright>
+    <license>GNU General Public License Version 2 oder später; siehe LICENSE.txt</license>
+    <authorEmail>mike@coolwebcreations.de</authorEmail>
+    <authorUrl>http://www.coolwebcreations.de</authorUrl>
+    <version>CVS: 0.1.16</version>
+    <description>PLG_SEARCH_COM_COOLCINEPLAN_XML_DESCRIPTION</description>
+    <files>
+        <filename plugin="coolcineplan">coolcineplan.php</filename>
+        <filename>index.html</filename>
+    </files>
+    <languages folder="../../../languages/site/search/coolcineplan">
+        
+			<language tag="en-GB">../../../languages/plugins/search/coolcineplan/en-GB/en-GB.plg_search_coolcineplan.ini</language>
+			<language tag="en-GB">../../../languages/plugins/search/coolcineplan/en-GB/en-GB.plg_search_coolcineplan.sys.ini</language>
+			<language tag="de-DE">../../../languages/plugins/search/coolcineplan/de-DE/de-DE.plg_search_coolcineplan.ini</language>
+			<language tag="de-DE">../../../languages/plugins/search/coolcineplan/de-DE/de-DE.plg_search_coolcineplan.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+
+            <fieldset name="basic">
+                <field name="search_limit" type="text" default="50" size="5"
+                       description="PLG_SEARCH_COM_COOLCINEPLAN_FIELD_SEARCHLIMIT_DESC"
+                       label="PLG_SEARCH_COM_COOLCINEPLAN_FIELD_SEARCHLIMIT_LABEL" />
+            </fieldset>
+
+        </fields>
+    </config>
+</extension>
