@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<component>
+  <table action="change" old_name="#__cineplanmovies" new_name="#__cineplan_movies" table_name="#__cineplan_movies" storage_engine="" collation="utf8_general_ci">
+    <field field_name="id" field_type="INT" field_length="11" is_autoincrement="1" index="primary" description=""/>
+    <field field_name="ordering" field_type="INT" field_length="11" index="index" description=""/>
+    <field field_name="state" field_type="TINYINT" field_length="1" index="index" description=""/>
+    <field field_name="checked_out" field_type="INT" field_length="11" index="index" description=""/>
+    <field field_name="checked_out_time" field_type="DATETIME" description=""/>
+    <field field_name="created_by" field_type="INT" field_length="11" index="index" description=""/>
+    <field action="add" field_name="movietitle" field_type="VARCHAR" field_length="255" description=""/>
+    <field action="add" field_name="moviecontent" field_type="TEXT" description=""/>
+    <field action="add" field_name="moviecomment" field_type="TEXT" description="Movie comment"/>
+    <field action="change" old_name="regie" new_name="director" field_name="director" field_type="VARCHAR" field_length="255" description=""/>
+    <field action="add" field_name="actors" field_type="VARCHAR" field_length="255" description=""/>
+    <field action="add" field_name="country" field_type="VARCHAR" field_length="255" description=""/>
+    <field action="add" field_name="year" field_type="VARCHAR" field_length="4" description=""/>
+    <field action="add" field_name="rentalcompany" field_type="VARCHAR" field_length="255" description=""/>
+    <field action="add" field_name="poster" field_type="VARCHAR" field_length="255" description=""/>
+    <field action="add" field_name="length" field_type="VARCHAR" field_length="255" description=""/>
+    <field action="add" field_name="genre" field_type="VARCHAR" field_length="255" description=""/>
+    <field action="add" field_name="age" field_type="VARCHAR" field_length="255" description=""/>
+    <field action="add" field_name="trailer_id" field_type="VARCHAR" field_length="255" description="Youtube Trailer ID"/>
+  </table>
+  <table action="change" old_name="#__cineplan_shows" new_name="#__cineplan_showings" table_name="#__cineplan_showings" storage_engine="" collation="utf8_general_ci">
+    <field field_name="id" field_type="INT" field_length="11" is_autoincrement="1" index="primary" description=""/>
+    <field field_name="ordering" field_type="INT" field_length="11" index="index" description=""/>
+    <field field_name="state" field_type="TINYINT" field_length="1" index="index" description=""/>
+    <field field_name="checked_out" field_type="INT" field_length="11" index="index" description=""/>
+    <field field_name="checked_out_time" field_type="DATETIME" description=""/>
+    <field field_name="created_by" field_type="INT" field_length="11" index="index" description=""/>
+    <field field_name="modified_by" field_type="INT" field_length="11" index="index" description=""/>
+    <field action="change" old_name="showtime" new_name="showingtime" field_name="showingtime" field_type="DATE" description=""/>
+    <field action="add" field_name="movie" field_type="TEXT" description=""/>
+    <field action="change" old_name="showtype" new_name="auditorium" field_name="auditorium" field_type="TEXT" description=""/>
+    <field action="change" old_name="auditorium_copy_1" new_name="showtype" field_name="showtype" field_type="TEXT" description=""/>
+    <field action="remove" field_name="showtime"/>
+  </table>
+  <table action="change" old_name="#__cineplan_categories" new_name="#__cineplan_showtypes" table_name="#__cineplan_showtypes" storage_engine="" collation="utf8_general_ci">
+    <field field_name="id" field_type="INT" field_length="11" is_autoincrement="1" index="primary" description=""/>
+    <field field_name="ordering" field_type="INT" field_length="11" index="index" description=""/>
+    <field field_name="state" field_type="TINYINT" field_length="1" index="index" description=""/>
+    <field field_name="checked_out" field_type="INT" field_length="11" index="index" description=""/>
+    <field field_name="checked_out_time" field_type="DATETIME" description=""/>
+    <field field_name="created_by" field_type="INT" field_length="11" index="index" description=""/>
+    <field field_name="modified_by" field_type="INT" field_length="11" index="index" description=""/>
+    <field action="change" old_name="title" new_name="showtype" field_name="showtype" field_type="VARCHAR" field_length="255" description=""/>
+    <field action="add" field_name="description" field_type="TEXT" description=""/>
+    <field action="add" field_name="image" field_type="VARCHAR" field_length="255" description=""/>
+  </table>
+  <table action="change" old_name="#__cineplan_cinemas" new_name="#__cineplan_auditoriums" table_name="#__cineplan_auditoriums" storage_engine="" collation="utf8_general_ci">
+    <field field_name="id" field_type="INT" field_length="11" is_autoincrement="1" index="primary" description=""/>
+    <field field_name="ordering" field_type="INT" field_length="11" index="index" description=""/>
+    <field field_name="state" field_type="TINYINT" field_length="1" index="index" description=""/>
+    <field field_name="checked_out" field_type="INT" field_length="11" index="index" description=""/>
+    <field field_name="checked_out_time" field_type="DATETIME" description=""/>
+    <field field_name="created_by" field_type="INT" field_length="11" index="index" description=""/>
+    <field field_name="modified_by" field_type="INT" field_length="11" index="index" description=""/>
+    <field action="change" old_name="cinema" new_name="auditorium_name" field_name="auditorium_name" field_type="VARCHAR" field_length="255" description=""/>
+    <field action="add" field_name="seats" field_type="VARCHAR" field_length="255" description="Number of available seats"/>
+    <field action="change" field_name="auditorium_image" field_type="VARCHAR" field_length="255" description=""/>
+  </table>
+  <table action="add" table_name="#__cineplan_reservations" storage_engine="" collation="utf8_general_ci">
+    <field field_name="id" field_type="INT" field_length="11" is_autoincrement="1" index="primary" description=""/>
+    <field field_name="ordering" field_type="INT" field_length="11" index="index" description=""/>
+    <field field_name="state" field_type="TINYINT" field_length="1" index="index" description=""/>
+    <field field_name="checked_out" field_type="INT" field_length="11" index="index" description=""/>
+    <field field_name="checked_out_time" field_type="DATETIME" description=""/>
+    <field field_name="created_by" field_type="INT" field_length="11" index="index" description=""/>
+    <field field_name="modified_by" field_type="INT" field_length="11" index="index" description=""/>
+    <field action="change" old_name="showdate" new_name="show_id" field_name="show_id" field_type="TEXT" description=""/>
+  </table>
+  <table action="add" table_name="#__cineplan_users" storage_engine="" collation="utf8_general_ci">
+    <field field_name="id" field_type="INT" field_length="11" is_autoincrement="1" index="primary" description=""/>
+    <field field_name="ordering" field_type="INT" field_length="11" index="index" description=""/>
+    <field field_name="state" field_type="TINYINT" field_length="1" index="index" description=""/>
+    <field field_name="checked_out" field_type="INT" field_length="11" index="index" description=""/>
+    <field field_name="checked_out_time" field_type="DATETIME" description=""/>
+    <field field_name="created_by" field_type="INT" field_length="11" index="index" description=""/>
+    <field field_name="modified_by" field_type="INT" field_length="11" index="index" description=""/>
+  </table>
+</component>
