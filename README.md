@@ -7,7 +7,7 @@
 <li>movie descriptions :ok_hand:</li>
 <li>showings management :wrench:</li>
 <li>auditorium management :ok_hand:</li>
-<li>a special view for showings with AngularJS :bomb:</li>
+<li>a special view to show the showings with AngularJS :bomb:</li>
 <li>json interface to connect with apps :bomb:</li>
 </ul>
 <h4>In future planned:</h4>
