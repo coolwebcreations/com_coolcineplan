@@ -13,7 +13,7 @@
 <h4>In future planned:</h4>
 :hourglass_flowing_sand: :crystal_ball: 
 <ul>
-<li>usermanagement</li>
+<li>usermanagement (Joomla! user integration)</li>
 <li>favorite showings with reminder</li>
 <li>reservations</li>
 </ul>
