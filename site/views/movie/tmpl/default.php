@@ -17,7 +17,7 @@ if (!$canEdit && JFactory::getUser()->authorise('core.edit.own', 'com_coolcinepl
 <?php if ($this->item) : ?>
 
 	<div class="item_fields">
-		<-- New Template -->
+		-- New Template --
 		<div class="container">
   <div class="panel panel-default">
     <div class="panel-heading">
@@ -92,7 +92,7 @@ if (!$canEdit && JFactory::getUser()->authorise('core.edit.own', 'com_coolcinepl
 </div>
 		
 		
-		<--- Table --->
+		--- old Table ---
 		<table class="table">
 			<tr>
 			<th><?php echo JText::_('COM_COOLCINEPLAN_FORM_LBL_MOVIE_STATE'); ?></th>
