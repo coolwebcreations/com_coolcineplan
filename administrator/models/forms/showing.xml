@@ -54,7 +54,7 @@
 			type="sql"
 			label="Movie"
 			description=""
-			query="SELECT id, movietitle FROM #__cineplan_movies"
+			query="SELECT id, movietitle FROM #__coolcineplan_movies"
 			key_field="id"
 			value_field="movietitle"
 			required="true"
@@ -65,7 +65,7 @@
 			type="sql"
 			label="Auditorium"
 			description=""
-			query="SELECT id, auditorium_name FROM #__cineplan_auditoriums"
+			query="SELECT id, auditorium_name FROM #__coolcineplan_auditoriums"
 			key_field="id"
 			value_field="auditorium_name"
 		/> 
@@ -75,7 +75,7 @@
 			type="sql"
 			label="Showtype"
 			description=""
-			query="SELECT id, showtype FROM #__cineplan_showtypes"
+			query="SELECT id, showtype FROM #__coolcineplan_showtypes"
 			key_field="id"
 			value_field="showtype"
 		/> 
