@@ -207,7 +207,7 @@ if (empty($list['direction']))
 				)
 			);
 
-		$query->from('`#__cineplan_showtypes` AS a');
+		$query->from('`#__coolcineplan_showtypes` AS a');
 		
 		// Join over the users for the checked out user.
 		$query->select('uc.name AS editor');
