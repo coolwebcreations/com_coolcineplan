@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS `#__cineplan_movies` (
+CREATE TABLE IF NOT EXISTS `#__coolcineplan_movies` (
 `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
 
 `asset_id` INT(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS `#__cineplan_movies` (
 PRIMARY KEY (`id`)
 ) DEFAULT COLLATE=utf8_general_ci;
 
-CREATE TABLE IF NOT EXISTS `#__cineplan_showings` (
+CREATE TABLE IF NOT EXISTS `#__coolcineplan_showings` (
 `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
 
 `asset_id` INT(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `#__cineplan_showings` (
 PRIMARY KEY (`id`)
 ) DEFAULT COLLATE=utf8_general_ci;
 
-CREATE TABLE IF NOT EXISTS `#__cineplan_showtypes` (
+CREATE TABLE IF NOT EXISTS `#__coolcineplan_showtypes` (
 `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
 
 `asset_id` INT(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `#__cineplan_showtypes` (
 PRIMARY KEY (`id`)
 ) DEFAULT COLLATE=utf8_general_ci;
 
-CREATE TABLE IF NOT EXISTS `#__cineplan_auditoriums` (
+CREATE TABLE IF NOT EXISTS `#__coolcineplan_auditoriums` (
 `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
 
 `asset_id` INT(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `#__cineplan_auditoriums` (
 PRIMARY KEY (`id`)
 ) DEFAULT COLLATE=utf8_general_ci;
 
-CREATE TABLE IF NOT EXISTS `#__cineplan_reservations` (
+CREATE TABLE IF NOT EXISTS `#__coolcineplan_reservations` (
 `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
 
 `asset_id` INT(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -91,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `#__cineplan_reservations` (
 PRIMARY KEY (`id`)
 ) DEFAULT COLLATE=utf8_general_ci;
 
-CREATE TABLE IF NOT EXISTS `#__cineplan_users` (
+CREATE TABLE IF NOT EXISTS `#__coolcineplan_users` (
 `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
 
 `asset_id` INT(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -107,37 +107,37 @@ PRIMARY KEY (`id`)
 
 
 INSERT INTO `#__content_types` (`type_title`, `type_alias`, `table`, `content_history_options`)
-SELECT * FROM ( SELECT 'Movie','com_coolcineplan.movie','{"special":{"dbtable":"#__cineplan_movies","key":"id","type":"Movie","prefix":"Cool Cine PlanTable"}}', '{"formFile":"administrator\/components\/com_coolcineplan\/models\/forms\/movie.xml", "hideFields":["checked_out","checked_out_time","params","language" ,"moviecomment"], "ignoreChanges":["modified_by", "modified", "checked_out", "checked_out_time"], "convertToInt":["publish_up", "publish_down"], "displayLookup":[{"sourceColumn":"catid","targetTable":"#__categories","targetColumn":"id","displayColumn":"title"},{"sourceColumn":"group_id","targetTable":"#__usergroups","targetColumn":"id","displayColumn":"title"},{"sourceColumn":"created_by","targetTable":"#__users","targetColumn":"id","displayColumn":"name"},{"sourceColumn":"access","targetTable":"#__viewlevels","targetColumn":"id","displayColumn":"title"},{"sourceColumn":"modified_by","targetTable":"#__users","targetColumn":"id","displayColumn":"name"}]}') AS tmp
+SELECT * FROM ( SELECT 'Movie','com_coolcineplan.movie','{"special":{"dbtable":"#__coolcineplan_movies","key":"id","type":"Movie","prefix":"Cool Cine PlanTable"}}', '{"formFile":"administrator\/components\/com_coolcineplan\/models\/forms\/movie.xml", "hideFields":["checked_out","checked_out_time","params","language" ,"moviecomment"], "ignoreChanges":["modified_by", "modified", "checked_out", "checked_out_time"], "convertToInt":["publish_up", "publish_down"], "displayLookup":[{"sourceColumn":"catid","targetTable":"#__categories","targetColumn":"id","displayColumn":"title"},{"sourceColumn":"group_id","targetTable":"#__usergroups","targetColumn":"id","displayColumn":"title"},{"sourceColumn":"created_by","targetTable":"#__users","targetColumn":"id","displayColumn":"name"},{"sourceColumn":"access","targetTable":"#__viewlevels","targetColumn":"id","displayColumn":"title"},{"sourceColumn":"modified_by","targetTable":"#__users","targetColumn":"id","displayColumn":"name"}]}') AS tmp
 WHERE NOT EXISTS (
 	SELECT type_alias FROM `#__content_types` WHERE (`type_alias` = 'com_coolcineplan.movie')
 ) LIMIT 1;
 
 INSERT INTO `#__content_types` (`type_title`, `type_alias`, `table`, `content_history_options`)
-SELECT * FROM ( SELECT 'Showing','com_coolcineplan.showing','{"special":{"dbtable":"#__cineplan_showings","key":"id","type":"Showing","prefix":"Cool Cine PlanTable"}}', '{"formFile":"administrator\/components\/com_coolcineplan\/models\/forms\/showing.xml", "hideFields":["checked_out","checked_out_time","params","language"], "ignoreChanges":["modified_by", "modified", "checked_out", "checked_out_time"], "convertToInt":["publish_up", "publish_down"], "displayLookup":[{"sourceColumn":"catid","targetTable":"#__categories","targetColumn":"id","displayColumn":"title"},{"sourceColumn":"group_id","targetTable":"#__usergroups","targetColumn":"id","displayColumn":"title"},{"sourceColumn":"created_by","targetTable":"#__users","targetColumn":"id","displayColumn":"name"},{"sourceColumn":"access","targetTable":"#__viewlevels","targetColumn":"id","displayColumn":"title"},{"sourceColumn":"modified_by","targetTable":"#__users","targetColumn":"id","displayColumn":"name"}]}') AS tmp
+SELECT * FROM ( SELECT 'Showing','com_coolcineplan.showing','{"special":{"dbtable":"#__coolcineplan_showings","key":"id","type":"Showing","prefix":"Cool Cine PlanTable"}}', '{"formFile":"administrator\/components\/com_coolcineplan\/models\/forms\/showing.xml", "hideFields":["checked_out","checked_out_time","params","language"], "ignoreChanges":["modified_by", "modified", "checked_out", "checked_out_time"], "convertToInt":["publish_up", "publish_down"], "displayLookup":[{"sourceColumn":"catid","targetTable":"#__categories","targetColumn":"id","displayColumn":"title"},{"sourceColumn":"group_id","targetTable":"#__usergroups","targetColumn":"id","displayColumn":"title"},{"sourceColumn":"created_by","targetTable":"#__users","targetColumn":"id","displayColumn":"name"},{"sourceColumn":"access","targetTable":"#__viewlevels","targetColumn":"id","displayColumn":"title"},{"sourceColumn":"modified_by","targetTable":"#__users","targetColumn":"id","displayColumn":"name"}]}') AS tmp
 WHERE NOT EXISTS (
 	SELECT type_alias FROM `#__content_types` WHERE (`type_alias` = 'com_coolcineplan.showing')
 ) LIMIT 1;
 
 INSERT INTO `#__content_types` (`type_title`, `type_alias`, `table`, `content_history_options`)
-SELECT * FROM ( SELECT 'Showtype','com_coolcineplan.showtype','{"special":{"dbtable":"#__cineplan_showtypes","key":"id","type":"Showtype","prefix":"Cool Cine PlanTable"}}', '{"formFile":"administrator\/components\/com_coolcineplan\/models\/forms\/showtype.xml", "hideFields":["checked_out","checked_out_time","params","language" ,"description"], "ignoreChanges":["modified_by", "modified", "checked_out", "checked_out_time"], "convertToInt":["publish_up", "publish_down"], "displayLookup":[{"sourceColumn":"catid","targetTable":"#__categories","targetColumn":"id","displayColumn":"title"},{"sourceColumn":"group_id","targetTable":"#__usergroups","targetColumn":"id","displayColumn":"title"},{"sourceColumn":"created_by","targetTable":"#__users","targetColumn":"id","displayColumn":"name"},{"sourceColumn":"access","targetTable":"#__viewlevels","targetColumn":"id","displayColumn":"title"},{"sourceColumn":"modified_by","targetTable":"#__users","targetColumn":"id","displayColumn":"name"}]}') AS tmp
+SELECT * FROM ( SELECT 'Showtype','com_coolcineplan.showtype','{"special":{"dbtable":"#__coolcineplan_showtypes","key":"id","type":"Showtype","prefix":"Cool Cine PlanTable"}}', '{"formFile":"administrator\/components\/com_coolcineplan\/models\/forms\/showtype.xml", "hideFields":["checked_out","checked_out_time","params","language" ,"description"], "ignoreChanges":["modified_by", "modified", "checked_out", "checked_out_time"], "convertToInt":["publish_up", "publish_down"], "displayLookup":[{"sourceColumn":"catid","targetTable":"#__categories","targetColumn":"id","displayColumn":"title"},{"sourceColumn":"group_id","targetTable":"#__usergroups","targetColumn":"id","displayColumn":"title"},{"sourceColumn":"created_by","targetTable":"#__users","targetColumn":"id","displayColumn":"name"},{"sourceColumn":"access","targetTable":"#__viewlevels","targetColumn":"id","displayColumn":"title"},{"sourceColumn":"modified_by","targetTable":"#__users","targetColumn":"id","displayColumn":"name"}]}') AS tmp
 WHERE NOT EXISTS (
 	SELECT type_alias FROM `#__content_types` WHERE (`type_alias` = 'com_coolcineplan.showtype')
 ) LIMIT 1;
 
 INSERT INTO `#__content_types` (`type_title`, `type_alias`, `table`, `content_history_options`)
-SELECT * FROM ( SELECT 'Auditorium','com_coolcineplan.auditorium','{"special":{"dbtable":"#__cineplan_auditoriums","key":"id","type":"Auditorium","prefix":"Cool Cine PlanTable"}}', '{"formFile":"administrator\/components\/com_coolcineplan\/models\/forms\/auditorium.xml", "hideFields":["checked_out","checked_out_time","params","language"], "ignoreChanges":["modified_by", "modified", "checked_out", "checked_out_time"], "convertToInt":["publish_up", "publish_down"], "displayLookup":[{"sourceColumn":"catid","targetTable":"#__categories","targetColumn":"id","displayColumn":"title"},{"sourceColumn":"group_id","targetTable":"#__usergroups","targetColumn":"id","displayColumn":"title"},{"sourceColumn":"created_by","targetTable":"#__users","targetColumn":"id","displayColumn":"name"},{"sourceColumn":"access","targetTable":"#__viewlevels","targetColumn":"id","displayColumn":"title"},{"sourceColumn":"modified_by","targetTable":"#__users","targetColumn":"id","displayColumn":"name"}]}') AS tmp
+SELECT * FROM ( SELECT 'Auditorium','com_coolcineplan.auditorium','{"special":{"dbtable":"#__coolcineplan_auditoriums","key":"id","type":"Auditorium","prefix":"Cool Cine PlanTable"}}', '{"formFile":"administrator\/components\/com_coolcineplan\/models\/forms\/auditorium.xml", "hideFields":["checked_out","checked_out_time","params","language"], "ignoreChanges":["modified_by", "modified", "checked_out", "checked_out_time"], "convertToInt":["publish_up", "publish_down"], "displayLookup":[{"sourceColumn":"catid","targetTable":"#__categories","targetColumn":"id","displayColumn":"title"},{"sourceColumn":"group_id","targetTable":"#__usergroups","targetColumn":"id","displayColumn":"title"},{"sourceColumn":"created_by","targetTable":"#__users","targetColumn":"id","displayColumn":"name"},{"sourceColumn":"access","targetTable":"#__viewlevels","targetColumn":"id","displayColumn":"title"},{"sourceColumn":"modified_by","targetTable":"#__users","targetColumn":"id","displayColumn":"name"}]}') AS tmp
 WHERE NOT EXISTS (
 	SELECT type_alias FROM `#__content_types` WHERE (`type_alias` = 'com_coolcineplan.auditorium')
 ) LIMIT 1;
 
 INSERT INTO `#__content_types` (`type_title`, `type_alias`, `table`, `content_history_options`)
-SELECT * FROM ( SELECT 'Reservation','com_coolcineplan.reservation','{"special":{"dbtable":"#__cineplan_reservations","key":"id","type":"Reservation","prefix":"Cool Cine PlanTable"}}', '{"formFile":"administrator\/components\/com_coolcineplan\/models\/forms\/reservation.xml", "hideFields":["checked_out","checked_out_time","params","language"], "ignoreChanges":["modified_by", "modified", "checked_out", "checked_out_time"], "convertToInt":["publish_up", "publish_down"], "displayLookup":[{"sourceColumn":"catid","targetTable":"#__categories","targetColumn":"id","displayColumn":"title"},{"sourceColumn":"group_id","targetTable":"#__usergroups","targetColumn":"id","displayColumn":"title"},{"sourceColumn":"created_by","targetTable":"#__users","targetColumn":"id","displayColumn":"name"},{"sourceColumn":"access","targetTable":"#__viewlevels","targetColumn":"id","displayColumn":"title"},{"sourceColumn":"modified_by","targetTable":"#__users","targetColumn":"id","displayColumn":"name"}]}') AS tmp
+SELECT * FROM ( SELECT 'Reservation','com_coolcineplan.reservation','{"special":{"dbtable":"#__coolcineplan_reservations","key":"id","type":"Reservation","prefix":"Cool Cine PlanTable"}}', '{"formFile":"administrator\/components\/com_coolcineplan\/models\/forms\/reservation.xml", "hideFields":["checked_out","checked_out_time","params","language"], "ignoreChanges":["modified_by", "modified", "checked_out", "checked_out_time"], "convertToInt":["publish_up", "publish_down"], "displayLookup":[{"sourceColumn":"catid","targetTable":"#__categories","targetColumn":"id","displayColumn":"title"},{"sourceColumn":"group_id","targetTable":"#__usergroups","targetColumn":"id","displayColumn":"title"},{"sourceColumn":"created_by","targetTable":"#__users","targetColumn":"id","displayColumn":"name"},{"sourceColumn":"access","targetTable":"#__viewlevels","targetColumn":"id","displayColumn":"title"},{"sourceColumn":"modified_by","targetTable":"#__users","targetColumn":"id","displayColumn":"name"}]}') AS tmp
 WHERE NOT EXISTS (
 	SELECT type_alias FROM `#__content_types` WHERE (`type_alias` = 'com_coolcineplan.reservation')
 ) LIMIT 1;
 
 INSERT INTO `#__content_types` (`type_title`, `type_alias`, `table`, `content_history_options`)
-SELECT * FROM ( SELECT 'User','com_coolcineplan.user','{"special":{"dbtable":"#__cineplan_users","key":"id","type":"User","prefix":"Cool Cine PlanTable"}}', '{"formFile":"administrator\/components\/com_coolcineplan\/models\/forms\/user.xml", "hideFields":["checked_out","checked_out_time","params","language"], "ignoreChanges":["modified_by", "modified", "checked_out", "checked_out_time"], "convertToInt":["publish_up", "publish_down"], "displayLookup":[{"sourceColumn":"catid","targetTable":"#__categories","targetColumn":"id","displayColumn":"title"},{"sourceColumn":"group_id","targetTable":"#__usergroups","targetColumn":"id","displayColumn":"title"},{"sourceColumn":"created_by","targetTable":"#__users","targetColumn":"id","displayColumn":"name"},{"sourceColumn":"access","targetTable":"#__viewlevels","targetColumn":"id","displayColumn":"title"},{"sourceColumn":"modified_by","targetTable":"#__users","targetColumn":"id","displayColumn":"name"}]}') AS tmp
+SELECT * FROM ( SELECT 'User','com_coolcineplan.user','{"special":{"dbtable":"#__coolcineplan_users","key":"id","type":"User","prefix":"Cool Cine PlanTable"}}', '{"formFile":"administrator\/components\/com_coolcineplan\/models\/forms\/user.xml", "hideFields":["checked_out","checked_out_time","params","language"], "ignoreChanges":["modified_by", "modified", "checked_out", "checked_out_time"], "convertToInt":["publish_up", "publish_down"], "displayLookup":[{"sourceColumn":"catid","targetTable":"#__categories","targetColumn":"id","displayColumn":"title"},{"sourceColumn":"group_id","targetTable":"#__usergroups","targetColumn":"id","displayColumn":"title"},{"sourceColumn":"created_by","targetTable":"#__users","targetColumn":"id","displayColumn":"name"},{"sourceColumn":"access","targetTable":"#__viewlevels","targetColumn":"id","displayColumn":"title"},{"sourceColumn":"modified_by","targetTable":"#__users","targetColumn":"id","displayColumn":"name"}]}') AS tmp
 WHERE NOT EXISTS (
 	SELECT type_alias FROM `#__content_types` WHERE (`type_alias` = 'com_coolcineplan.user')
 ) LIMIT 1;
