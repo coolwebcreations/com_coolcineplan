@@ -115,7 +115,7 @@ class CoolcineplanModelUsers extends JModelList
 				'list.select', 'DISTINCT a.*'
 			)
 		);
-		$query->from('`#__cineplan_users` AS a');
+		$query->from('`#__coolcineplan_users` AS a');
 
 		// Join over the users for the checked out user
 		$query->select("uc.name AS editor");
