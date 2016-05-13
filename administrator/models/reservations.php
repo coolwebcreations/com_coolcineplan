@@ -188,7 +188,7 @@ class CoolcineplanModelReservations extends JModelList
 				foreach ($values as $value){
 					if(!empty($value)){
 						$db = JFactory::getDbo();
-						$query = "SELECT id, date FROM #__cineplan_shows HAVING id LIKE '" . $value . "'";
+						$query = "SELECT id, date FROM #__coolcineplan_shows HAVING id LIKE '" . $value . "'";
 						$db->setQuery($query);
 						$results = $db->loadObject();
 						if ($results) {
