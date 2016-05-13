@@ -208,7 +208,7 @@ if (empty($list['direction']))
 				)
 			);
 
-		$query->from('`#__cineplan_showings` AS a');
+		$query->from('`#__coolcineplan_showings` AS a');
 		
 		// Join over the users for the checked out user.
 		$query->select('uc.name AS editor');
@@ -294,7 +294,7 @@ if (empty($list['direction']))
 					if (!empty($value))
 					{
 						$db = JFactory::getDbo();
-						$query = "SELECT id, movietitle FROM #__cineplan_movies HAVING id LIKE '" . $value . "'";
+						$query = "SELECT id, movietitle FROM #__coolcineplan_movies HAVING id LIKE '" . $value . "'";
 						$db->setQuery($query);
 						$results = $db->loadObject();
 						if ($results)
@@ -318,7 +318,7 @@ if (empty($list['direction']))
 					if (!empty($value))
 					{
 						$db = JFactory::getDbo();
-						$query = "SELECT id, auditorium_name FROM #__cineplan_auditoriums HAVING id LIKE '" . $value . "'";
+						$query = "SELECT id, auditorium_name FROM #__coolcineplan_auditoriums HAVING id LIKE '" . $value . "'";
 						$db->setQuery($query);
 						$results = $db->loadObject();
 						if ($results)
@@ -342,7 +342,7 @@ if (empty($list['direction']))
 					if (!empty($value))
 					{
 						$db = JFactory::getDbo();
-						$query = "SELECT id, showtype FROM #__cineplan_showtypes HAVING id LIKE '" . $value . "'";
+						$query = "SELECT id, showtype FROM #__coolcineplan_showtypes HAVING id LIKE '" . $value . "'";
 						$db->setQuery($query);
 						$results = $db->loadObject();
 						if ($results)
