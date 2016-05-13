@@ -17,6 +17,82 @@ if (!$canEdit && JFactory::getUser()->authorise('core.edit.own', 'com_coolcinepl
 <?php if ($this->item) : ?>
 
 	<div class="item_fields">
+		<-- New Template -->
+		<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+		<h1>Movietitle</h1>
+	</div>
+    <div class="panel-body">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-3 col-sm-3" >
+					<img src="http://www.kino-gross-gerau.de/images/film/2016/05/Ein_Hologramm_fuer_den_Koenig.jpg" class="img-thumbnail" alt="Filtitel"  align="center"/>
+				</div>
+			<div class="col-xs-6 col-sm-6" >Moviedescription</br>bkbcbblaacb</br>nconscenseon</div>
+				<!-- Add clearfix for only the required viewport -->
+				<div class="clearfix visible-xs"></div>
+				<div class="col-xs-3 col-sm-3" >director / actors </div>
+				</div>
+			<div class="row">
+				<div class="col-xs-9 col-sm-9" >
+					provider / age / length / country / year
+				</div>
+				<!-- Add clearfix for only the required viewport -->
+				<div class="clearfix visible-xs"></div>
+				<div class="col-xs-3 col-sm-3" >
+					<button type="button" class="btn btn-primary">See trailer</button>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Vorstellungen des Films -->
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+		<h2>Showings</h2>
+	</div>
+    <div class="panel-body">
+		<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12" >
+				<ul class="list-group">
+					<li class="list-group-item">
+						<div class="row">
+							<div class="col-sm-2" ><h4>Showtime</h4></div>
+							<div class="col-sm-2" ><h4>Movietitle</h4></div>
+							<div class="col-sm-2" ><button type="button" class="btn btn-link"><b>Auditorium</b></button></div>
+							<div class="col-sm-2" ><button type="button" class="btn btn-success" align="right">Reservation <span class="badge">free: 22</span></button></div>
+						</div>
+					</li>
+					<li class="list-group-item">
+						<div class="row">
+							<div class="col-sm-2" ><h4>Showtime</h4></div>
+							<div class="col-sm-2" ><h4>Movietitle</h4></div>
+							<div class="col-sm-2" ><button type="button" class="btn btn-link"><b>Auditorium</b></button></div>
+							<div class="col-sm-2" ><button type="button" class="btn btn-danger" align="right">Reservation <span class="badge">sold out</span></button></div>
+						</div>
+					</li>
+					<li class="list-group-item">
+						<div class="row">
+							<div class="col-sm-2" ><h4>Showtime</h4></div>
+							<div class="col-sm-2" ><h4>Movietitle</h4></div>
+							<div class="col-sm-2" ><button type="button" class="btn btn-link"><b>Auditorium</b></button></div>
+							<div class="col-sm-2" ><button type="button" class="btn btn-warning" align="right">Reservation <span class="badge">free: 4</span></button></div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		</div>
+	</div>
+	</div>
+</div>
+		
+		
+		<--- Table --->
 		<table class="table">
 			<tr>
 			<th><?php echo JText::_('COM_COOLCINEPLAN_FORM_LBL_MOVIE_STATE'); ?></th>
