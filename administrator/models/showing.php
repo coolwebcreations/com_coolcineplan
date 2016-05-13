@@ -237,7 +237,7 @@ class CoolcineplanModelShowing extends JModelAdmin
 			if (@$table->ordering === '')
 			{
 				$db = JFactory::getDbo();
-				$db->setQuery('SELECT MAX(ordering) FROM #__cineplan_showings');
+				$db->setQuery('SELECT MAX(ordering) FROM #__coolcineplan_showings');
 				$max             = $db->loadResult();
 				$table->ordering = $max + 1;
 			}
