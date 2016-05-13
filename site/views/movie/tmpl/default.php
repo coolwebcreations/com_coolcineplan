@@ -14,6 +14,9 @@ if (!$canEdit && JFactory::getUser()->authorise('core.edit.own', 'com_coolcinepl
 	$canEdit = JFactory::getUser()->id == $this->item->created_by;
 }
 ?>
+<!-- load bootstrap files -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <?php if ($this->item) : ?>
 
 	<div class="item_fields">
