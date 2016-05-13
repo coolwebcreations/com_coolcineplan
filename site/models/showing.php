@@ -116,7 +116,7 @@ class CoolcineplanModelShowing extends JModelItem
 				$textValue = array();
 				foreach ($values as $value){
 					$db = JFactory::getDbo();
-					$query = "SELECT id, movietitle FROM #__cineplan_movies HAVING id LIKE '" . $value . "'";
+					$query = "SELECT id, movietitle FROM #__coolcineplan_movies HAVING id LIKE '" . $value . "'";
 					$db->setQuery($query);
 					$results = $db->loadObject();
 					if ($results) {
@@ -137,7 +137,7 @@ class CoolcineplanModelShowing extends JModelItem
 				$textValue = array();
 				foreach ($values as $value){
 					$db = JFactory::getDbo();
-					$query = "SELECT id, auditorium_name FROM #__cineplan_auditoriums HAVING id LIKE '" . $value . "'";
+					$query = "SELECT id, auditorium_name FROM #__coolcineplan_auditoriums HAVING id LIKE '" . $value . "'";
 					$db->setQuery($query);
 					$results = $db->loadObject();
 					if ($results) {
@@ -158,7 +158,7 @@ class CoolcineplanModelShowing extends JModelItem
 				$textValue = array();
 				foreach ($values as $value){
 					$db = JFactory::getDbo();
-					$query = "SELECT id, showtype FROM #__cineplan_showtypes HAVING id LIKE '" . $value . "'";
+					$query = "SELECT id, showtype FROM #__coolcineplan_showtypes HAVING id LIKE '" . $value . "'";
 					$db->setQuery($query);
 					$results = $db->loadObject();
 					if ($results) {
