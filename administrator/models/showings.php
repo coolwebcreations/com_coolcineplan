@@ -245,7 +245,7 @@ class CoolcineplanModelShowings extends JModelList
 				foreach ($values as $value){
 					if(!empty($value)){
 						$db = JFactory::getDbo();
-						$query = "SELECT id, showtype FROM #__cineplan_showtypes HAVING id LIKE '" . $value . "'";
+						$query = "SELECT id, showtype FROM #__coolcineplan_showtypes HAVING id LIKE '" . $value . "'";
 						$db->setQuery($query);
 						$results = $db->loadObject();
 						if ($results) {
