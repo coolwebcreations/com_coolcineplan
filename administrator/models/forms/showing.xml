@@ -32,6 +32,7 @@
  
 		<field name="showingtime"
 			type="calendar"
+			format="%A - %d.%m.%Y %H:%i"
 			label="COM_COOLCINEPLAN_FORM_LBL_SHOWING_SHOWINGTIME"
 			description="COM_COOLCINEPLAN_FORM_DESC_SHOWING_SHOWINGTIME" 
 			hint="COM_COOLCINEPLAN_FORM_LBL_SHOWING_SHOWINGTIME"
