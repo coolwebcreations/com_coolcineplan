@@ -27,7 +27,7 @@ class CoolcineplanTableshowing extends JTable
 	public function __construct(&$db)
 	{
 		JObserverMapper::addObserverClassToClass('JTableObserverContenthistory', 'CoolcineplanTableshowing', array('typeAlias' => 'com_coolcineplan.showing'));
-		parent::__construct('#__cineplan_showings', 'id', $db);
+		parent::__construct('#__coolcineplan_showings', 'id', $db);
 	}
 
 	/**
