@@ -48,11 +48,12 @@ setlocale(LC_TIME, "de_DE.utf8");
 							<h4><?php echo '' . $today->format("l - d. F Y") . "\n"; ?></h4>
 							<-- Today Showings --></br>
 							<ul class="list-unstyled">
+								<?php foreach ($this->items as $i => $item) : ?>
 								<li ng-repeat="x in shows">
-									<?php foreach ($this->items as $i => $item) : ?>
 									<b><?php echo $item->showingtime; ?> <?php echo $item->movie; ?></b>
 									<img src="<?php echo $item->poster; ?>" class="img-thumbnail" alt="<?php echo $item->movie; ?>" title="<?php echo $item->showingtime; ?> Uhr <?php echo $item->movie; ?>" width="320">
 								</li>
+								<?php endforeach; ?>
 							</ul>
 						</div>
 						<div class="col-sm-4" align="center">
