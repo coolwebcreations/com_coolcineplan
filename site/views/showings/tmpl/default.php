@@ -41,7 +41,6 @@ setlocale(LC_TIME, "de_DE.utf8");
 			<div>
               <?php echo json_encode($this->items); ?>
           	</div>
-				<?php foreach ($this->items as $i => $item) : ?>
 					<!-- first row today + 2 days -->
 					<div class="row">
 						<div class="col-sm-4" align="center">
@@ -50,6 +49,7 @@ setlocale(LC_TIME, "de_DE.utf8");
 							<-- Today Showings --></br>
 							<ul class="list-unstyled">
 								<li ng-repeat="x in shows">
+									<?php foreach ($this->items as $i => $item) : ?>
 									<b><?php echo $item->showingtime; ?> <?php echo $item->movie; ?></b>
 									<img src="<?php echo $item->poster; ?>" class="img-thumbnail" alt="<?php echo $item->movie; ?>" title="<?php echo $item->showingtime; ?> Uhr <?php echo $item->movie; ?>" width="320">
 								</li>
