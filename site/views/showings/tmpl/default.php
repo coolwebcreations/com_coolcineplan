@@ -1,6 +1,6 @@
 <?php
 /**
- * @version    CVS: 0.1.16
+ * @version    CVS: 0.1.7
  * @package    Com_Cineplan
  * @author     Mike Brandner <mike@coolwebcreations.de>
  * @copyright  Copyright (C) coolwebcreations.de 2016. All rights reserved
@@ -35,34 +35,28 @@ $day7 =& JFactory::getDate('now +6 day');
 setlocale(LC_TIME, "de_DE.utf8");
 ?>
 
-		<div ng-app="showsApp" ng-controller="showsCtrl"> 
-    
+		
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/app.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
-        <script src="app.js"></script>
-        
-       <div  class="container">
+              
 			<div>
-              <?php //echo json_encode($this->items); ?>
+              <?php echo json_encode($this->items); ?>
           	</div>
-			
-				<div class="container">
+				<?php foreach ($this->items as $i => $item) : ?>
 					<!-- first row today + 2 days -->
 					<div class="row">
 						<div class="col-sm-4" align="center">
-							<h3><?php echo JText::_('COM_CINEPLAN_TODAY'); ?></h3>
+							<h3><?php echo JText::_('COM_COOLCINEPLAN_TODAY'); ?></h3>
 							<h4><?php echo '' . $today->format("l - d. F Y") . "\n"; ?></h4>
 							<-- Today Showings --></br>
 							<ul class="list-unstyled">
 								<li ng-repeat="x in shows">
-									<b>{{ x.showtime }} Uhr {{ x.movie }}</b>
-									<img class="poster" src="imgs/(x.poster)" alt="{{x.movie}}" title="{{x.showtime}} Uhr {{show.movietitle}}" width="320">
+									<b><?php echo $item->showingtime; ?> <?php echo $item->movie; ?></b>
+									<img src="<?php echo $item->poster; ?>" class="img-thumbnail" alt="<?php echo $item->movie; ?>" title="<?php echo $item->showingtime; ?> Uhr <?php echo $item->movie; ?>" width="320">
 								</li>
 							</ul>
 						</div>
 						<div class="col-sm-4" align="center">
-							<h3><?php echo JText::_('COM_CINEPLAN_TOMORROW'); ?></h3>
+							<h3><?php echo JText::_('COM_COOLCINEPLAN_TOMORROW'); ?></h3>
 							<h4><?php echo '' . $tomorrow->format("l - d. F Y") . "\n"; ?></h4>
 							<-- Tomorrow Showings --></br>
 						</div>
@@ -98,15 +92,6 @@ setlocale(LC_TIME, "de_DE.utf8");
 					<div class="row">
 							<-- end of showings - space for other contents -->
                     </div>
-					</div>
-		</div>
-		
-<script>
-var app = angular.module('showsApp', []);
-app.controller('showsCtrl', function($scope, $http) {
-    $http.get("index.php?option=com_cineplan&view=showingsjson&tmpl=component").then(function(response) {
-        $scope.shows = response.data.records;
-    });
-});
-</script>
-          
+	<?php endforeach; ?>	
+  </div>      
+  
