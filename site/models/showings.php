@@ -209,6 +209,7 @@ if (empty($list['direction']))
 			);
 
 		$query->from('`#__coolcineplan_showings` AS a');
+		$query->from('`#__coolcineplan_movies` AS b');
 		
 		// Join over the users for the checked out user.
 		$query->select('uc.name AS editor');
